@@ -52,7 +52,7 @@ input[type=number] { -moz-appearance:textfield; }
 /* Estilo básico y centrado para el pie de página */
 #footer {
     background-image: url(../assets/banner-pie-de-pagina-web.png);
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
     background-size: cover;
     position: fixed;
@@ -62,15 +62,20 @@ input[type=number] { -moz-appearance:textfield; }
     z-index: -1;
 }
 
-#footer .copyright p {
-    margin: 5px 0;
+/* Media Queries para ajustar el footer en pantallas más pequeñas */
+@media (max-width: 768px) {
+    #footer {
+        padding: 1.5em 0; /* Menos padding en pantallas más pequeñas */
+        font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    }
 }
 
-#footer .credits strong {
-    font-weight: bolder;
-    color: orange;
+@media (max-width: 480px) {
+    #footer {
+        padding: 1em 0; /* Aún menos padding en pantallas muy pequeñas */
+        font-size: 0.8em; /* Tamaño de fuente aún más pequeño */
+    }
 }
-
 
 /* Ajuste de texto en pantallas más pequeñas */
 @media (max-width: 576px) {
