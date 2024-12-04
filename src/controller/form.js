@@ -78,7 +78,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
     autoCompletarOCampos("cedula", data.cedula);
     autoCompletarOCampos("nombres", data.primer_nombre+" "+data.segundo_nombre);
     autoCompletarOCampos("apellidos", data.primer_apellido+" "+data.segundo_apellido);
-    autoCompletarOCampos("genero", (data.sexo === "M") ? "Maculino" : "Femenina");
+    autoCompletarOCampos("genero", (data.sexo.replace(/\n/g, '').replace(/\s\s+/g, '') === "M") ? "Maculino" : "Femenina");
 
     document.getElementById("formulario").addEventListener("submit", async (e) => {
         e.preventDefault();
