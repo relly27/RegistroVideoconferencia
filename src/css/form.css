@@ -7,13 +7,15 @@ input[type=number] { -moz-appearance:textfield; }
 
 /* Estilos generales para el cintillo */
 .bienvenida {
-    background-color: rgb(21, 101, 192);
+    background-image: url(../assets/cintillo.png);
     color: #ffffff;
+    background-size: cover;
     padding: 2% 20px;
 }
 
+
 /* Estilo y tamaño del logo */
-.bienvenida img {
+.bienvenida {
     min-width: 100px; /* Ajusta este tamaño según lo necesario */
 }
 
@@ -49,10 +51,10 @@ input[type=number] { -moz-appearance:textfield; }
 
 /* Estilo básico y centrado para el pie de página */
 #footer {
-    background-color: rgb(21, 101, 192);
-    color: #fff;
-    padding: 20px 0;
+    background-image: url(../assets/banner-pie-de-pagina-web.png);
+    padding: 30px 0;
     text-align: center;
+    background-size: cover;
     position: fixed;
     bottom: 0;
     width: 100%;
