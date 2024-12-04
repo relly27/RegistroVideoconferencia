@@ -165,9 +165,9 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
                         icon: "success"
                     });
                     // alert("Formulario enviado con éxito.");
-                    // setTimeout(() => {
-                    //     window.location.href = "/";
-                    // }, 2000)
+                    setTimeout(() => {
+                        window.location.href = "/";
+                    }, 2000)
                 }
             } else {
                 // console.error("Error en la solicitud:", response.statusText);
