@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <td>${persona.cedula_id}</td>
               <td>${persona.primer_nombre+" "+persona.segundo_nombre}</td>        
               <td>${persona.primer_apellido+" "+persona.segundo_apellido}</td>
+              <td>${persona.genero}</td>
               <td>${persona.email}</td>
               <td>${persona.telf}</td>
               <td>${persona.nacionalidad}</td>

@@ -56,8 +56,8 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
     // Eventos para los cambios en los selectores
     estadoSelect.addEventListener('change', async () => {
         const estadoId = estadoSelect.value;
-        municipioSelect.innerHTML = ''; // Limpiamos municipios y parroquias
-        parroquiaSelect.innerHTML = '';
+        municipioSelect.innerHTML = 'Seleccione un estado primero'; // Limpiamos municipios y parroquias
+        parroquiaSelect.innerHTML = 'Seleccione un Municipio primero';
         if (estadoId) {
             await fetchMunicipios(estadoId); // Cargamos municipios correspondientes
         }
@@ -131,9 +131,8 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
             estado: parseInt(document.getElementById("estado")?.value),
             municipio: parseInt(document.getElementById("municipio")?.value),
             parroquia: parseInt(document.getElementById("parroquia")?.value),
-            // genero: data.sexo,
+            genero: data.sexo.replace(/\n/g, '').replace(/\s\s+/g, ''),
         };
-
 
         try {
             const response = await fetch("http://10.10.10.17:3000/personas", {
