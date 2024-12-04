@@ -5,11 +5,11 @@
     padding: 40px 0;
     text-align: center;
     background-size: cover;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     font-size: 14px;
-    z-index: -1;
+    z-index: 1;
 }
 
 /* Media Queries para ajustar el footer en pantallas más pequeñas */
@@ -42,9 +42,68 @@
 }
 
 .bienvenida {
+   
     background-image: url(../assets/cintillo.png);
     color: #ffffff;
     background-size: cover;
     padding: 3% 20px;
+
 }
 
+/* .container .my-5{
+    z-index: -1;
+} */
+
+
+/* estilos de la tabla */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa; /* Color de fondo suave */
+}
+
+.table {
+    width: 100%;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    overflow: hidden; /* Oculta bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para la tabla */
+    background-color: white; /* Fondo blanco para la tabla */
+}
+
+.table-header {
+    background-color: #007bff; /* Color de fondo del encabezado */
+    color: white; /* Color del texto en el encabezado */
+}
+
+.table-header th {
+    padding: 14px; /* Espaciado interno en el encabezado */
+    text-align: center; /* Alinear texto a la izquierda */
+    font-weight: bold; /* Negrita para el encabezado */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.table tbody tr {
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave para el efecto hover */
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Color de fondo para filas impares */
+}
+
+.table tbody tr:hover {
+    background-color: #e0f7fa; /* Color de fondo al pasar el mouse */
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+}
+
+.table td {
+    padding: 12px; /* Espaciado interno en celdas */
+    border: 1px solid #dee2e6; /* Borde de las celdas */
+}
+
+.table td:last-child {
+    border-right: none; /* Elimina el borde derecho de la última celda */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    border-radius: 0.5rem; /* Bordes redondeados para el contenedor */
+}
