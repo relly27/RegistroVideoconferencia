@@ -10,7 +10,7 @@ input[type=number] { -moz-appearance:textfield; }
     background-image: url(../assets/cintillo.png);
     color: #ffffff;
     background-size: cover;
-    padding: 2% 20px;
+    padding: 3% 20px;
 }
 
 
