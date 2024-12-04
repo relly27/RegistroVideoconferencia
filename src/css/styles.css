@@ -12,9 +12,27 @@
     z-index: 1;
 }
 
+#footer1{
+    background-image: url(../assets/banner-pie-de-pagina-web.png);
+    padding: 40px 0;
+    text-align: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    z-index: 1;
+}
+
+
+
 /* Media Queries para ajustar el footer en pantallas más pequeñas */
 @media (max-width: 768px) {
     #footer {
+        padding: 1.5em 0; /* Menos padding en pantallas más pequeñas */
+        font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    }
+    #footer1 {
         padding: 1.5em 0; /* Menos padding en pantallas más pequeñas */
         font-size: 0.9em; /* Tamaño de fuente más pequeño */
     }
@@ -22,6 +40,11 @@
 
 @media (max-width: 480px) {
     #footer {
+        padding: 1em 0; /* Aún menos padding en pantallas muy pequeñas */
+        font-size: 0.8em; /* Tamaño de fuente aún más pequeño */
+    }
+
+    #footer1 {
         padding: 1em 0; /* Aún menos padding en pantallas muy pequeñas */
         font-size: 0.8em; /* Tamaño de fuente aún más pequeño */
     }
@@ -33,11 +56,21 @@
         font-size: 12px;
         position: relative;
     }
+
+    #footer1 {
+        font-size: 12px;
+        position: absolute;
+    }
 }
 @media (max-height: 760px) {
     #footer {
         font-size: 12px;
         position: relative;
+    }
+
+    #footer1 {
+        font-size: 12px;
+        position: absolute;
     }
 }
 
