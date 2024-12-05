@@ -132,6 +132,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
             municipio: parseInt(document.getElementById("municipio")?.value),
             parroquia: parseInt(document.getElementById("parroquia")?.value),
             genero: data.sexo.replace(/\n/g, '').replace(/\s\s+/g, ''),
+            descripcion: document.getElementById("descripcion")?.value
         };
 
         try {
