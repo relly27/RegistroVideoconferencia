@@ -7,7 +7,7 @@ document.getElementById('descargar').addEventListener('click', async function() 
 
     try {
         // Hacer la solicitud a la API
-        const response = await fetch(`http://10.10.10.17:3000/listaPersonas?fecha=${fecha}`);
+        const response = await fetch(`http://10.10.10.17:3000/listaPersonas?fecha=${fecha}`); 
         if (!response.ok) {
             throw new Error('Error al obtener los datos');
         }
