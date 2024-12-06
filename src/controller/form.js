@@ -87,8 +87,8 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
     autoCompletarOCampos("nacionalidad", data.nacionalidad.replace(/\n/g, '').replace(/\s\s+/g, ''));
     autoCompletarOCampos("cedula", data.cedula);
-    autoCompletarOCampos("nombres", data.primer_nombre+" "+data.segundo_nombre);
-    autoCompletarOCampos("apellidos", data.primer_apellido+" "+data.segundo_apellido);
+    autoCompletarOCampos("nombres", data.primer_nombre + " " + data.segundo_nombre);
+    autoCompletarOCampos("apellidos", data.primer_apellido + " " + data.segundo_apellido);
     autoCompletarOCampos("genero", (data.sexo.replace(/\n/g, '').replace(/\s\s+/g, '') === "M") ? "Masculino" : "Femenina");
 
     document.getElementById("formulario").addEventListener("submit", async (e) => {
@@ -106,17 +106,17 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
             cancelButtonColor: "#d33",
             confirmButtonText: "Sí, confirmar",
             cancelButtonText: "Cancelar"
-          });
-        
-          if (!result.isConfirmed) {
+        });
+
+        if (!result.isConfirmed) {
             loadMoreButton.classList.remove("load-more--loading");
             Swal.fire({
-              icon: "info",
-              title: "Cancelado",
-              text: "Puedes editar la información antes de enviarla.",
+                icon: "info",
+                title: "Cancelado",
+                text: "Puedes editar la información antes de enviarla.",
             });
             return; // Salimos de la función
-          }
+        }
 
         // Recopilamos los datos del formulario
         const datosFormulario = {
@@ -128,12 +128,13 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
             email: document.getElementById("correo")?.value,
             telf: document.getElementById("telefono")?.value,
             nacionalidad: document.getElementById("nacionalidad")?.value,
-            estado: parseInt(document.getElementById("estado")?.value),
-            municipio: parseInt(document.getElementById("municipio")?.value),
-            parroquia: parseInt(document.getElementById("parroquia")?.value),
+            estado: document.getElementById("estado")?.selectedOptions[0]?.textContent,
+            municipio: document.getElementById("municipio")?.selectedOptions[0]?.textContent,
+            parroquia: document.getElementById("parroquia")?.selectedOptions[0]?.textContent,
             genero: data.sexo.replace(/\n/g, '').replace(/\s\s+/g, ''),
             descripcion: document.getElementById("descripcion")?.value
         };
+
 
         try {
             const response = await fetch("http://10.10.10.17:3000/personas", {
@@ -146,7 +147,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
             if (response.ok) {
                 const respuesta = await response.json();
-                console.log("Respuesta del servidor:", respuesta);
+                // console.log("Respuesta del servidor:", respuesta);
                 if (respuesta.error) {
 
                     loadMoreButton.classList.remove("load-more--loading");
@@ -163,8 +164,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
                         title: "¡Formulario enviado con éxito!",
                         text: "Sera redirigido en 2 Segundos",
                         icon: "success"
-                    });
-                    // alert("Formulario enviado con éxito.");
+                    });                   // alert("Formulario enviado con éxito.");
                     setTimeout(() => {
                         window.location.href = "/";
                     }, 2000)
