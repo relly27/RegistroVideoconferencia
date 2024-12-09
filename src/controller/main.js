@@ -2,8 +2,9 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     event.preventDefault();
     const nacionalidad = document.getElementById("nacionalidad").value;
     const cedula = document.getElementById("cedula").value;
+    const apiUrl = "http://10.10.10.17:3000"
 
-    const url = `http://10.10.10.17:3000/BuscarPersona/${nacionalidad}/${cedula}`;
+    const url = `${apiUrl}/BuscarPersona/${nacionalidad}/${cedula}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {

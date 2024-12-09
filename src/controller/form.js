@@ -5,6 +5,8 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
 } else {
 
+    const apiUrl = "http://10.10.10.17:3000"
+
     const estadoSelect = document.getElementById('estado');
     const municipioSelect = document.getElementById('municipio');
     const parroquiaSelect = document.getElementById('parroquia');
@@ -23,7 +25,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
     async function fetchEstados() {
         try {
-            const response = await fetch("http://10.10.10.17:3000/obtenerEstados");
+            const response = await fetch(`${apiUrl}/obtenerEstados`);
             const estados = await response.json();
             populateSelect(estadoSelect, estados, 'estado', 'id_estado'); // Usamos 'nombre' como texto y 'id' como valor
         } catch (error) {
@@ -34,7 +36,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
     // Obtener municipios
     async function fetchMunicipios(estadoId) {
         try {
-            const response = await fetch(`http://10.10.10.17:3000/obtenerMunicipios=${estadoId}`);
+            const response = await fetch(`${apiUrl}/obtenerMunicipios=${estadoId}`);
             const municipios = await response.json();
             populateSelect(municipioSelect, municipios, 'municipio', 'id_municipio'); // Usamos 'nombre' como texto y 'id' como valor
         } catch (error) {
@@ -45,7 +47,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
     // Obtener parroquias
     async function fetchParroquias(municipioId) {
         try {
-            const response = await fetch(`http://10.10.10.17:3000/obtenerParroquias=${municipioId}`);
+            const response = await fetch(`${apiUrl}/obtenerParroquias=${municipioId}`);
             const parroquias = await response.json();
             populateSelect(parroquiaSelect, parroquias, 'parroquia', 'id_parroquia'); // Usamos 'nombre' como texto y 'id' como valor
         } catch (error) {
@@ -137,7 +139,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
 
         try {
-            const response = await fetch("http://10.10.10.17:3000/personas", {
+            const response = await fetch(`${apiUrl}/personas`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
