@@ -5,7 +5,7 @@ if (sessionStorage.getItem('accessGranted') !== 'true') {
 
 } else {
 
-    const apiUrl = "http://10.10.10.17:3000"
+    const apiUrl = "http://172.16.2.8:3001"
 
     const estadoSelect = document.getElementById('estado');
     const municipioSelect = document.getElementById('municipio');

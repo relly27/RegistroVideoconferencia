@@ -1,4 +1,4 @@
-const urlApi = "http://10.10.10.17:3000"
+const urlApi = "http://172.16.2.8:3001"
 
 document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = `${urlApi}/listaPersonas`;

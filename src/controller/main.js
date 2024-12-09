@@ -2,7 +2,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     event.preventDefault();
     const nacionalidad = document.getElementById("nacionalidad").value;
     const cedula = document.getElementById("cedula").value;
-    const apiUrl = "http://10.10.10.17:3000"
+    const apiUrl = "http://172.16.2.8:3001"
 
     const url = `${apiUrl}/BuscarPersona/${nacionalidad}/${cedula}`;
     try {
